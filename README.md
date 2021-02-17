@@ -1,24 +1,6 @@
-# README
+wine inventory prototype
+===
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+a prototype (without a user model) for an eventual wine inventory and retrieval system.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`bundle install` and `rails server` to run.
