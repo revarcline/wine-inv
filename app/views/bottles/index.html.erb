@@ -2,10 +2,11 @@
 
 <% @bottles.each do |bottle| %>
   <div class="bottle_entry">
-    <i>
-    <%= link_to bottle.name, bottle_path(bottle) %>
-    </i> - <%= link_to bottle.appellation.name, appellation_path(bottle.appellation) %> 
+    <i><%= link_to bottle.name, bottle_path(bottle) %></i>
+    - <%= link_to bottle.appellation.name, appellation_path(bottle.appellation) %> 
     - <%= link_to bottle.producer.name, producer_path(bottle.producer) %>,
     <%= bottle.vintage %>
   </div>
 <% end %>
+<br>
+<div class="new"><%= link_to 'New Bottle', new_bottle_path %></div>
