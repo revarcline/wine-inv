@@ -18,6 +18,7 @@ class BottlesController < ApplicationController
                                        :producer_id,
                                        :appellation_id,
                                        :varietal_ids,
+                                       :bin,
                                        :desc))
     @bottle.save
     p @bottle
