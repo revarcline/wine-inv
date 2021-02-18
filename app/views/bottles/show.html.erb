@@ -1,0 +1,40 @@
+<h1><i><%= @bottle.name %></i> Details</h1>
+
+<div class="details">Vintage: <%= @bottle.vintage %>
+</div>
+
+<div class="details">Bin: <%= @bottle.bin %></div>
+
+<div class="details">Quantity: <%= @bottle.quantity %></div>
+
+<div class="details">
+  Producer:
+  <%= link_to @bottle.producer.name, producer_path(@bottle.producer) %>
+</div>
+
+<div class="details">
+  Appellation:
+  <%= link_to @bottle.appellation.name, producer_path(@bottle.appellation) %>
+</div>
+
+<div class="details">
+  <% if @bottle.varietals.length > 1 %>
+    Varietals:
+    <ul id="varietal_list">
+      <% @bottle.varietals.each do |varietal| %>
+        <li><%= link_to varietal.name, varietal_path(varietal) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    Varietal: <%= link_to @bottle.varietals.first.name,
+                          varietal_path(@bottle.varietals.first) %>
+  <% end %>
+</div>
+
+<div class="details">
+  Tasting Notes: <%= @bottle.desc %>
+</div>
+
+<div class="edit">
+  <%= link_to 'Edit Bottle', edit_bottle_path(@bottle) %>
+</div>

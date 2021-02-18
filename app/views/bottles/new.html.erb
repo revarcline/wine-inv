@@ -1,0 +1,40 @@
+<h1>New Bottle</h1>
+
+<%= form_for @bottle do |f| %>
+  <div class="name_input">
+    <%= f.label 'Name:' %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="vintage_input">
+    <%= f.label 'Vintage:' %><br>
+    <%= f.text_field :vintage %>
+  </div>
+
+  <div class="producer_input">
+    <%= f.label 'Producer:' %><br>
+    <%= collection_select(:bottle, :producer_id, @producers, :id, :name ) %>
+    <div class="new_link"><%= link_to 'Add a new producer', new_producer_path %></div>
+  </div>
+
+  <div class="appellation_input">
+    <%= f.label 'Appellation:' %><br>
+    <%= collection_select(:bottle, :appellation_id, @appellations, :id, :name ) %>
+    <div class="new_link"><%= link_to 'Add a new appellation', new_appellation_path %></div>
+  </div>
+
+  <div class="varietal_input">
+    <%= f.label 'Varietals:' %>
+    <%= collection_check_boxes(:bottle, :varietal_ids, @varietals, :id, :name) do |b|%>
+      <div class="varietal_check"><%= b.check_box %><%= b.label %></div>
+    <% end %>
+    <div class="new_link"><%= link_to 'Add a new varietal', new_varietal_path %></div>
+  </div>
+
+  <div class="desc_input">
+    <%= f.label 'Description:' %><br>
+    <%= f.text_area :desc %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
