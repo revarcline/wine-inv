@@ -1,0 +1,9 @@
+<h1>All Bottles</h1>
+
+<% @bottles.each do |bottle| %>
+  <div class="bottle_entry">
+    <%= link_to bottle.name, bottle_path(bottle) %> -
+    <%= link_to bottle.producer.name, producer_path(bottle.producer) %>,
+    <%= bottle.vintage %>
+  </div>
+<% end %>
